@@ -108,6 +108,18 @@ Taba:Paragraph({
     Padding = UDim.new(0, 1)
 })
 
+Taba:Paragraph({
+    Title = "计划缝合50个服务器😋",
+    Desc = [[ ]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
 Button(Tab1, "复制QQ群[获取最新消息]", function()
     setclipboard("984820669")
 end)
@@ -592,11 +604,6 @@ Toggle(Tab2, "显示玩家方框", false, function(value)
     updateAllESP()
 end)
 
-Button(Tabb, "关闭UI", function()
+Button(Tabb, "折叠UI", function()
     Window:Close()
-end)
-
-Button(Tabb, "摧毁UI", function()
-    Window:Close()
-    Window = nil
 end)
