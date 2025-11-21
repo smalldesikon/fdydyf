@@ -1,0 +1,602 @@
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local Window = WindUI:CreateWindow({
+    Title = "雄脚本",
+    Icon = "door-open",
+    Author = "司空制作",
+    Folder = "CloudHub",
+    Size = UDim2.fromOffset(560, 360),
+    Transparent = true,
+    User = {
+        Enabled = true,
+        Callback = function() 
+            print("clicked") 
+        end,
+        Anonymous = true
+    },
+})
+
+Window:EditOpenButton(
+    {
+        Title = "XION",
+        Icon = "leaf",
+        CornerRadius = UDim.new(0, 13),
+        StrokeThickness = 4,
+        Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(186, 19, 19)),ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 60, 129))}),
+        Draggable = true
+    }
+)
+
+function Tab(a)
+    return Window:Tab({Title = a, Icon = "eye"})
+end
+
+function Button(a, b, c)
+    return a:Button({Title = b, Callback = c})
+end
+
+function Toggle(a, b, c, d)
+    return a:Toggle({Title = b, Value = c, Callback = d})
+end
+
+function Slider(a, b, c, d, e, f)
+    return a:Slider({Title = b, Step = 1, Value = {Min = c, Max = d, Default = e}, Callback = f})
+end
+
+function Dropdown(a, b, c, d, e)
+    return a:Dropdown({Title = b, Values = c, Value = d, Callback = e})
+end
+
+function Input(a, b, c, d, e, f)
+    return a:Input({
+        Title = b,
+        Desc = c or "",
+        Value = d or "",
+        Placeholder = e or "",
+        Callback = f
+    })
+end
+
+local Taba = Tab("首页")
+local Tab1 = Tab("通用")
+local Tab2 = Tab("ESP")
+local Tabb = Tab("设置")
+
+local player = game.Players.LocalPlayer
+
+Taba:Paragraph({
+    Title = "系统信息",
+    Desc = string.format("用户名: %s\n显示名: %s\n用户ID: %d\n账号年龄: %d天", 
+        player.Name, player.DisplayName, player.UserId, player.AccountAge),
+    Image = "info",
+    ImageSize = 20,
+    Color = Color3.fromHex("#0099FF")
+})
+
+local fpsCounter = 0
+local fpsLastTime = tick()
+local fpsText = "计算中..."
+
+spawn(function()
+    while wait() do
+        fpsCounter += 1
+        
+        if tick() - fpsLastTime >= 1 then
+            fpsText = string.format("%.1f FPS", fpsCounter) -- 显示一位小数
+            fpsCounter = 0
+            fpsLastTime = tick()
+        end
+    end
+end)
+
+Taba:Paragraph({
+    Title = "性能信息",
+    Desc = "帧率: " .. fpsText,
+    Image = "bar-chart",
+    ImageSize = 20,
+    Color = Color3.fromHex("#00A2FF")
+})
+
+Taba:Paragraph({
+    Title = "本人在此声明：封号司空概不负责",
+    Desc = [[ ]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "复制QQ群[获取最新消息]", function()
+    setclipboard("984820669")
+end)
+
+Tab1:Paragraph({
+    Title = "以下是飞行区",
+    Desc = [[ 👇👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "普通飞行", function() 
+        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\90\66\122\99\84\109\49\102\34\41\41\40\41\10")()
+end) 
+
+Button(Tab1, "飞行v4", function() 
+        loadstring(game:HttpGet("https://dpaste.org/PE88V/raw"))()
+end)
+
+Button(Tab1, "无敌少侠r15", function() 
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Invinicible-Flight-R15-45414"))()
+end)
+
+Button(Tab1, "无敌少侠r6", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E6%97%A0%E6%95%8C%E5%B0%91%E4%BE%A0%E9%A3%9E%E8%A1%8Cr6.txt"))()
+end)
+
+Tab1:Paragraph({
+    Title = "以下是防坠落区",
+    Desc = [[ 👇👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "防坠落", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MSTTOPPER/Scripts/refs/heads/main/FlashBack"))()
+end)
+
+Tab1:Paragraph({
+    Title = "以下是甩飞区",
+    Desc = [[ 👇👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "甩飞所有人", function() 
+        loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+end)
+
+Button(Tab1, "甩飞", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/3LD4D0/Crazy-Man-R6/36ec60d16bf8d208c40807aa0fd2662af76a5385/Crazy%20Man%20R6"))()
+end)
+
+Button(Tab1, "甩飞[new]", function() 
+        loadstring(game:HttpGet("http://rawscripts.net/raw/Universal-Script-Touch-fling-script-22447"))()
+end)
+
+Button(Tab1, "防甩飞", function() 
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Linux6699/DaHubRevival/main/AntiFling.lua'))()
+end)
+
+Tab1:Paragraph({
+    Title = "以下是旋转区",
+    Desc = [[ 👇👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "旋转[1]", function() 
+        loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+end)
+
+Button(Tab1, "旋转[2]", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/JsYb666/TUIXUI_qun-809771141/refs/heads/TUIXUI/fling"))()
+end)
+
+Button(Tab1, "在别人身上旋转", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ShutUpJamesTheLoserAlt/hatspin/refs/heads/main/hat"))()
+end)
+local espEnabled = false
+local espObjects = {}
+local refreshConnection = nil
+
+local espSettings = {
+    showName = false,
+    showDistance = false,
+    showHealth = false,
+    showBox = false
+}
+
+local camera = game:GetService("Workspace").CurrentCamera
+
+function getHeadScreenSize(character)
+    if not character then return 50 end
+    
+    local head = character:FindFirstChild("Head")
+    if not head then return 50 end
+    
+    local headPos, headVisible = camera:WorldToViewportPoint(head.Position)
+    if not headVisible then return 50 end
+    
+    local distance = (head.Position - camera.CFrame.Position).Magnitude
+    local headSize = head.Size.Y * 100 / distance
+    
+    return math.max(headSize, 10)
+end
+
+function updateHealthDisplay(player)
+    if not espObjects[player] or not espObjects[player].health then return end
+    
+    local character = player.Character
+    if not character or not character:FindFirstChild("Humanoid") then return end
+    
+    local humanoid = character.Humanoid
+    local healthPercent = humanoid.Health / humanoid.MaxHealth
+    local healthBar = espObjects[player].healthBar
+    local healthText = espObjects[player].healthText
+    
+    if healthBar and healthText then
+        healthBar.Size = UDim2.new(healthPercent, 0, 1, 0)
+        
+        if healthPercent > 0.7 then
+            healthBar.BackgroundColor3 = Color3.new(0, 1, 0)
+        elseif healthPercent > 0.3 then
+            healthBar.BackgroundColor3 = Color3.new(1, 1, 0)
+        else
+            healthBar.BackgroundColor3 = Color3.new(1, 0, 0)
+        end
+        
+        healthText.Text = string.format("%d/%d", 
+            math.floor(humanoid.Health), 
+            math.floor(humanoid.MaxHealth))
+    end
+end
+
+function createESP(player)
+    if not player.Character or not player.Character:FindFirstChild("HumanoidRootPart") then
+        return
+    end
+    
+    local character = player.Character
+    local humanoidRootPart = character.HumanoidRootPart
+    
+    if espObjects[player] then
+        clearESP(player)
+    end
+    
+    espObjects[player] = {}
+    
+    if espSettings.showName then
+        local nameBillboard = Instance.new("BillboardGui")
+        local nameText = Instance.new("TextLabel")
+        
+        nameBillboard.Name = "ESP_Name"
+        nameBillboard.Adornee = humanoidRootPart
+        nameBillboard.Size = UDim2.new(0, 200, 0, 30)
+        nameBillboard.StudsOffset = Vector3.new(0, 3.5, 0)
+        nameBillboard.AlwaysOnTop = true
+        nameBillboard.Parent = humanoidRootPart
+        
+        nameText.Size = UDim2.new(1, 0, 1, 0)
+        nameText.BackgroundTransparency = 1
+        nameText.Text = player.Name
+        nameText.TextColor3 = Color3.new(1, 1, 1)
+        nameText.TextSize = 14
+        nameText.Font = Enum.Font.GothamBold
+        nameText.Parent = nameBillboard
+        
+        espObjects[player].name = nameBillboard
+        espObjects[player].nameText = nameText
+    end
+    
+    if espSettings.showBox then
+        local boxGui = Instance.new("BillboardGui")
+        boxGui.Name = "ESP_Box2D"
+        boxGui.Adornee = humanoidRootPart
+        boxGui.Size = UDim2.new(0, 80, 0, 120)
+        boxGui.StudsOffset = Vector3.new(0, 0, 0)
+        boxGui.AlwaysOnTop = true
+        boxGui.Parent = humanoidRootPart
+        
+        local boxFrame = Instance.new("Frame")
+        boxFrame.Name = "BoxFrame"
+        boxFrame.Size = UDim2.new(1, 0, 1, 0)
+        boxFrame.BackgroundTransparency = 1
+        boxFrame.BorderSizePixel = 2
+        boxFrame.BorderColor3 = Color3.new(1, 0, 0)
+        boxFrame.Parent = boxGui
+        
+        local boxFill = Instance.new("Frame")
+        boxFill.Name = "BoxFill"
+        boxFill.Size = UDim2.new(1, 0, 1, 0)
+        boxFill.BackgroundColor3 = Color3.new(1, 0, 0)
+        boxFill.BackgroundTransparency = 0.8
+        boxFill.BorderSizePixel = 0
+        boxFill.Parent = boxGui
+        
+        espObjects[player].box = boxGui
+    end
+    
+    if espSettings.showDistance then
+        local distanceBillboard = Instance.new("BillboardGui")
+        local distanceText = Instance.new("TextLabel")
+        
+        distanceBillboard.Name = "ESP_Distance"
+        distanceBillboard.Adornee = humanoidRootPart
+        distanceBillboard.Size = UDim2.new(0, 120, 0, 25)
+        distanceBillboard.StudsOffset = Vector3.new(0, -3, 0)
+        distanceBillboard.AlwaysOnTop = true
+        distanceBillboard.Parent = humanoidRootPart
+        
+        distanceText.Size = UDim2.new(1, 0, 1, 0)
+        distanceText.BackgroundTransparency = 1
+        distanceText.TextColor3 = Color3.new(0, 1, 1)
+        distanceText.TextSize = 12
+        distanceText.Font = Enum.Font.GothamBold
+        distanceText.Text = "距离: 0"
+        distanceText.Parent = distanceBillboard
+        
+        espObjects[player].distance = distanceBillboard
+        espObjects[player].distanceText = distanceText
+    end
+    
+    if espSettings.showHealth and character:FindFirstChild("Humanoid") then
+        local healthBillboard = Instance.new("BillboardGui")
+        local healthFrame = Instance.new("Frame")
+        local healthBar = Instance.new("Frame")
+        local healthText = Instance.new("TextLabel")
+        
+        healthBillboard.Name = "ESP_Health"
+        healthBillboard.Adornee = humanoidRootPart
+        healthBillboard.Size = UDim2.new(0, 70, 0, 25)
+        healthBillboard.StudsOffset = Vector3.new(0, 2.5, 0)
+        healthBillboard.AlwaysOnTop = true
+        healthBillboard.Parent = humanoidRootPart
+        
+        healthFrame.Name = "HealthFrame"
+        healthFrame.Size = UDim2.new(0.9, 0, 0.5, 0)
+        healthFrame.Position = UDim2.new(0.05, 0, 0.25, 0)
+        healthFrame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+        healthFrame.BorderSizePixel = 1
+        healthFrame.BorderColor3 = Color3.new(1, 1, 1)
+        healthFrame.Parent = healthBillboard
+        
+        healthBar.Name = "HealthBar"
+        healthBar.Size = UDim2.new(1, 0, 1, 0)
+        healthBar.BackgroundColor3 = Color3.new(0, 1, 0)
+        healthBar.BorderSizePixel = 0
+        healthBar.Parent = healthFrame
+        
+        healthText.Name = "HealthText"
+        healthText.Size = UDim2.new(1, 0, 0.5, 0)
+        healthText.Position = UDim2.new(0, 0, 0.5, 0)
+        healthText.BackgroundTransparency = 1
+        healthText.TextColor3 = Color3.new(1, 1, 1)
+        healthText.TextSize = 10
+        healthText.Font = Enum.Font.GothamBold
+        healthText.Text = "100/100"
+        healthText.Parent = healthBillboard
+        
+        espObjects[player].health = healthBillboard
+        espObjects[player].healthBar = healthBar
+        espObjects[player].healthText = healthText
+    end
+end
+
+function updateESPSize(player)
+    local character = player.Character
+    if not character then return end
+    
+    local headSize = getHeadScreenSize(character)
+    local scale = headSize / 50
+    
+    scale = math.clamp(scale, 0.5, 3.0)
+    
+    if espObjects[player].name then
+        local baseSize = Vector2.new(200, 30)
+        espObjects[player].name.Size = UDim2.new(0, baseSize.X * scale, 0, baseSize.Y * scale)
+        if espObjects[player].nameText then
+            espObjects[player].nameText.TextSize = 14 * scale
+        end
+    end
+    
+    if espObjects[player].box then
+        local baseSize = Vector2.new(80, 120)
+        espObjects[player].box.Size = UDim2.new(0, baseSize.X * scale, 0, baseSize.Y * scale)
+    end
+    
+    if espObjects[player].distance then
+        local baseSize = Vector2.new(120, 25)
+        espObjects[player].distance.Size = UDim2.new(0, baseSize.X * scale, 0, baseSize.Y * scale)
+        if espObjects[player].distanceText then
+            espObjects[player].distanceText.TextSize = 12 * scale
+        end
+    end
+    
+    if espObjects[player].health then
+        local baseSize = Vector2.new(70, 25)
+        espObjects[player].health.Size = UDim2.new(0, baseSize.X * scale, 0, baseSize.Y * scale)
+        if espObjects[player].healthText then
+            espObjects[player].healthText.TextSize = 10 * scale
+        end
+    end
+end
+
+function clearESP(player)
+    if espObjects[player] then
+        for _, obj in pairs(espObjects[player]) do
+            if obj and obj.Parent then
+                obj:Destroy()
+            end
+        end
+        espObjects[player] = nil
+    end
+end
+
+function clearAllESP()
+    for player, objects in pairs(espObjects) do
+        clearESP(player)
+    end
+    espObjects = {}
+end
+
+function updateESPInfo()
+    if not espEnabled then return end
+    
+    local localPlayer = game.Players.LocalPlayer
+    local localCharacter = localPlayer.Character
+    local localRootPart = localCharacter and localCharacter:FindFirstChild("HumanoidRootPart")
+    
+    if not localRootPart then return end
+    
+    for _, player in ipairs(game.Players:GetPlayers()) do
+        if player ~= localPlayer then
+            local character = player.Character
+            local rootPart = character and character:FindFirstChild("HumanoidRootPart")
+            
+            if not rootPart then
+                clearESP(player)
+                continue
+            end
+            
+            if not espObjects[player] then
+                createESP(player)
+            end
+            
+            updateESPSize(player)
+            
+            if espSettings.showHealth then
+                updateHealthDisplay(player)
+            end
+            
+            if espSettings.showDistance and espObjects[player].distance then
+                local distance = (rootPart.Position - localRootPart.Position).Magnitude
+                local distanceText = espObjects[player].distanceText
+                if distanceText then
+                    distanceText.Text = string.format("距离: %d", math.floor(distance))
+                end
+            end
+            
+            continue
+        end
+    end
+end
+
+function updateAllESP()
+    clearAllESP()
+    
+    if not espEnabled then
+        return
+    end
+    
+    for _, player in ipairs(game.Players:GetPlayers()) do
+        if player ~= game.Players.LocalPlayer then
+            createESP(player)
+        end
+    end
+end
+
+function startAutoRefresh()
+    if refreshConnection then
+        refreshConnection:Disconnect()
+    end
+    
+    refreshConnection = game:GetService("RunService").Heartbeat:Connect(function()
+        updateESPInfo()
+    end)
+end
+
+function stopAutoRefresh()
+    if refreshConnection then
+        refreshConnection:Disconnect()
+        refreshConnection = nil
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+        if espEnabled then
+            wait(1)
+            createESP(player)
+        end
+    end)
+    
+    player.CharacterRemoving:Connect(function()
+        clearESP(player)
+    end)
+end)
+
+game.Players.PlayerRemoving:Connect(function(player)
+    clearESP(player)
+end)
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    if espEnabled then
+        wait(2)
+        updateAllESP()
+    end
+end)
+
+Toggle(Tab2, "启用ESP总开关", false, function(value)
+    espEnabled = value
+    
+    if value then
+        updateAllESP()
+        startAutoRefresh()
+    else
+        clearAllESP()
+        stopAutoRefresh()
+    end
+end)
+
+Toggle(Tab2, "显示玩家名称", false, function(value)
+    if not espEnabled then
+        return
+    end
+    espSettings.showName = value
+    updateAllESP()
+end)
+
+Toggle(Tab2, "显示玩家距离", false, function(value)
+    if not espEnabled then
+        return
+    end
+    espSettings.showDistance = value
+    updateAllESP()
+end)
+
+Toggle(Tab2, "显示玩家血量", false, function(value)
+    if not espEnabled then
+        return
+    end
+    espSettings.showHealth = value
+    updateAllESP()
+end)
+
+Toggle(Tab2, "显示玩家方框", false, function(value)
+    if not espEnabled then
+        return
+    end
+    espSettings.showBox = value
+    updateAllESP()
+end)
+
+Button(Tabb, "关闭UI", function()
+    Window:Close()
+end)
+
+Button(Tabb, "摧毁UI", function()
+    Window:Close()
+    Window = nil
+end)
