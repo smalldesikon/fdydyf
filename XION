@@ -1,6 +1,6 @@
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local Window = WindUI:CreateWindow({
-    Title = "雄脚本",
+    Title = "XION脚本",
     Icon = "door-open",
     Author = "司空制作",
     Folder = "CloudHub",
@@ -167,7 +167,7 @@ Toggle(Tab1, "无限跳", false, function(Value)
 end)
 
 Tab1:Paragraph({
-    Title = "以下是防坠落区",
+    Title = "以下是回溯区",
     Desc = [[ 👇👇👇👇👇]],
     Image = "eye",
     ImageSize = 24,
@@ -178,7 +178,7 @@ Tab1:Paragraph({
     Padding = UDim.new(0, 1)
 })
 
-Button(Tab1, "防坠落", function() 
+Button(Tab1, "回溯", function() 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/MSTTOPPER/Scripts/refs/heads/main/FlashBack"))()
 end)
 
@@ -206,7 +206,19 @@ Button(Tab1, "甩飞[new]", function()
         loadstring(game:HttpGet("http://rawscripts.net/raw/Universal-Script-Touch-fling-script-22447"))()
 end)
 
-Button(Tab1, "防甩飞", function() 
+Tab1:Paragraph({
+    Title = "以下是防坠落区",
+    Desc = [[ 👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "防坠落", function() 
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Linux6699/DaHubRevival/main/AntiFling.lua'))()
 end)
 
