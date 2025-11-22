@@ -61,6 +61,7 @@ local Tab1 = Tab("通用")
 local Tab2 = Tab("ESP")
 local Tab3 = Tab("自瞄")
 local Tab4 = Tab("子追")
+local Tabc = Tab("范围")
 local Tab5 = Tab("力量传奇")
 local Tab6 = Tab("忍者传奇")
 local Tab7 = Tab("极速传奇")
@@ -130,6 +131,268 @@ Button(Tab1, "复制QQ群[获取最新消息]", function()
 end)
 
 Tab1:Paragraph({
+    Title = "以下是常用的",
+    Desc = [[ 👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Slider(Tab1, "移动速度", 1, 600, game.Players.LocalPlayer.Character.Humanoid.WalkSpeed, function(a) 
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
+end)
+
+Slider(Tab1, "跳跃高度", 1, 600, game.Players.LocalPlayer.Character.Humanoid.JumpPower, function(a) 
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = a
+end)
+
+Slider(Tab1, "重力设置", 1, 500, workspace.Gravity, function(a) 
+        workspace.Gravity = a
+end)
+
+Button(Tab1, "锁视角", function() 
+    local ShiftlockStarterGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+ShiftlockStarterGui.Name = "Shiftlock (StarterGui)"
+ShiftlockStarterGui.Parent = game.CoreGui
+ShiftlockStarterGui.ZIndexBehavior =  Enum.ZIndexBehavior.Sibling
+ShiftlockStarterGui.ResetOnSpawn = false
+
+ImageButton.Parent = ShiftlockStarterGui
+ImageButton.Active = true
+ImageButton.Draggable = true
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 1.000
+ImageButton.Position = UDim2.new(0.921914339, 0, 0.552375436, 0)
+ImageButton.Size = UDim2.new(0.0636147112, 0, 0.0661305636, 0)
+ImageButton.SizeConstraint = Enum.SizeConstraint.RelativeXX
+ImageButton.Image = "http://www.roblox.com/asset/?id=182223762"
+local function TLQOYN_fake_script()
+    local script = Instance.new("LocalScript", ImageButton)
+
+    local MobileCameraFramework = {}
+    local Players = game.Players
+    local runservice = game:GetService("RunService")
+    local CAS = game:GetService("ContextActionService")
+    local Player = Players.LocalPlayer
+    local character = Player.Character or Player.CharacterAdded:Wait()
+    local root = character:WaitForChild("HumanoidRootPart")
+    local humanoid = character.Humanoid
+    local camera = workspace.CurrentCamera
+    local button = script.Parent
+    uis = game:GetService("UserInputService")
+    ismobile = uis.TouchEnabled
+    button.Visible = ismobile
+    
+    local states = {
+        OFF = "rbxasset://textures/ui/mouseLock_off@2x.png",
+        ON = "rbxasset://textures/ui/mouseLock_on@2x.png"
+    }
+    local MAX_LENGTH = 900000
+    local active = false
+    local ENABLED_OFFSET = CFrame.new(1.7, 0, 0)
+    local DISABLED_OFFSET = CFrame.new(-1.7, 0, 0)
+local rootPos = Vector3.new(0,0,0)
+local function UpdatePos()
+if Player.Character and Player.Character:FindFirstChildOfClass"Humanoid" and Player.Character:FindFirstChildOfClass"Humanoid".RootPart then
+rootPos = Player.Character:FindFirstChildOfClass"Humanoid".RootPart.Position
+end
+end
+    local function UpdateImage(STATE)
+        button.Image = states[STATE]
+    end
+    local function UpdateAutoRotate(BOOL)
+if Player.Character and Player.Character:FindFirstChildOfClass"Humanoid" then
+Player.Character:FindFirstChildOfClass"Humanoid".AutoRotate = BOOL
+end
+end
+    local function GetUpdatedCameraCFrame()
+if game:GetService"Workspace".CurrentCamera then
+return CFrame.new(rootPos, Vector3.new(game:GetService"Workspace".CurrentCamera.CFrame.LookVector.X * MAX_LENGTH, rootPos.Y, game:GetService"Workspace".CurrentCamera.CFrame.LookVector.Z * MAX_LENGTH))
+end
+end
+    local function EnableShiftlock()
+UpdatePos()
+        UpdateAutoRotate(false)
+        UpdateImage("ON")
+if Player.Character and Player.Character:FindFirstChildOfClass"Humanoid" and Player.Character:FindFirstChildOfClass"Humanoid".RootPart then
+Player.Character:FindFirstChildOfClass"Humanoid".RootPart.CFrame = GetUpdatedCameraCFrame()
+end
+if game:GetService"Workspace".CurrentCamera then
+game:GetService"Workspace".CurrentCamera.CFrame = camera.CFrame * ENABLED_OFFSET
+end
+    end
+    local function DisableShiftlock()
+UpdatePos()
+        UpdateAutoRotate(true)
+        UpdateImage("OFF")
+        if game:GetService"Workspace".CurrentCamera then
+game:GetService"Workspace".CurrentCamera.CFrame = camera.CFrame * DISABLED_OFFSET
+end
+        pcall(function()
+            active:Disconnect()
+            active = nil
+        end)
+    end
+    UpdateImage("OFF")
+    active = false
+    function ShiftLock()
+        if not active then
+            active = runservice.RenderStepped:Connect(function()
+                EnableShiftlock()
+            end)
+        else
+            DisableShiftlock()
+        end
+    end
+    local ShiftLockButton = CAS:BindAction("ShiftLOCK", ShiftLock, false, "On")
+    CAS:SetPosition("ShiftLOCK", UDim2.new(0.8, 0, 0.8, 0))
+    button.MouseButton1Click:Connect(function()
+        if not active then
+            active = runservice.RenderStepped:Connect(function()
+                EnableShiftlock()
+            end)
+        else
+            DisableShiftlock()
+        end
+    end)
+    return MobileCameraFramework
+    
+end
+coroutine.wrap(TLQOYN_fake_script)()
+local function OMQRQRC_fake_script()
+    local script = Instance.new("LocalScript", ShiftlockStarterGui)
+
+    local Players = game.Players
+    local UserInputService = game:GetService("UserInputService")
+    local Settings = UserSettings()
+    local GameSettings = Settings.GameSettings
+    local ShiftLockController = {}
+    while not Players.LocalPlayer do
+        wait()
+    end
+    local LocalPlayer = Players.LocalPlayer
+    local Mouse = LocalPlayer:GetMouse()
+    local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
+    local ScreenGui, ShiftLockIcon, InputCn
+    local IsShiftLockMode = true
+    local IsShiftLocked = true
+    local IsActionBound = false
+    local IsInFirstPerson = false
+    ShiftLockController.OnShiftLockToggled = Instance.new("BindableEvent")
+    local function isShiftLockMode()
+        return LocalPlayer.DevEnableMouseLock and GameSettings.ControlMode == Enum.ControlMode.MouseLockSwitch and LocalPlayer.DevComputerMovementMode ~= Enum.DevComputerMovementMode.ClickToMove and GameSettings.ComputerMovementMode ~= Enum.ComputerMovementMode.ClickToMove and LocalPlayer.DevComputerMovementMode ~= Enum.DevComputerMovementMode.Scriptable
+    end
+    if not UserInputService.TouchEnabled then
+        IsShiftLockMode = isShiftLockMode()
+    end
+    local function onShiftLockToggled()
+        IsShiftLocked = not IsShiftLocked
+        ShiftLockController.OnShiftLockToggled:Fire()
+    end
+    local initialize = function()
+        print("enabled")
+    end
+    function ShiftLockController:IsShiftLocked()
+        return IsShiftLockMode and IsShiftLocked
+    end
+    function ShiftLockController:SetIsInFirstPerson(isInFirstPerson)
+        IsInFirstPerson = isInFirstPerson
+    end
+    local function mouseLockSwitchFunc(actionName, inputState, inputObject)
+        if IsShiftLockMode then
+            onShiftLockToggled()
+        end
+    end
+    local function disableShiftLock()
+        if ScreenGui then
+            ScreenGui.Parent = nil
+        end
+        IsShiftLockMode = false
+        Mouse.Icon = ""
+        if InputCn then
+            InputCn:disconnect()
+            InputCn = nil
+        end
+        IsActionBound = false
+        ShiftLockController.OnShiftLockToggled:Fire()
+    end
+    local onShiftInputBegan = function(inputObject, isProcessed)
+        if isProcessed then
+            return
+        end
+        if inputObject.UserInputType ~= Enum.UserInputType.Keyboard or inputObject.KeyCode == Enum.KeyCode.LeftShift or inputObject.KeyCode == Enum.KeyCode.RightShift then
+        end
+    end
+    local function enableShiftLock()
+        IsShiftLockMode = isShiftLockMode()
+        if IsShiftLockMode then
+            if ScreenGui then
+                ScreenGui.Parent = PlayerGui
+            end
+            if IsShiftLocked then
+                ShiftLockController.OnShiftLockToggled:Fire()
+            end
+            if not IsActionBound then
+                InputCn = UserInputService.InputBegan:connect(onShiftInputBegan)
+                IsActionBound = true
+            end
+        end
+    end
+    GameSettings.Changed:connect(function(property)
+        if property == "ControlMode" then
+            if GameSettings.ControlMode == Enum.ControlMode.MouseLockSwitch then
+                enableShiftLock()
+            else
+                disableShiftLock()
+            end
+        elseif property == "ComputerMovementMode" then
+            if GameSettings.ComputerMovementMode == Enum.ComputerMovementMode.ClickToMove then
+                disableShiftLock()
+            else
+                enableShiftLock()
+            end
+        end
+    end)
+    LocalPlayer.Changed:connect(function(property)
+        if property == "DevEnableMouseLock" then
+            if LocalPlayer.DevEnableMouseLock then
+                enableShiftLock()
+            else
+                disableShiftLock()
+            end
+        elseif property == "DevComputerMovementMode" then
+            if LocalPlayer.DevComputerMovementMode == Enum.DevComputerMovementMode.ClickToMove or LocalPlayer.DevComputerMovementMode == Enum.DevComputerMovementMode.Scriptable then
+                disableShiftLock()
+            else
+                enableShiftLock()
+            end
+        end
+    end)
+    LocalPlayer.CharacterAdded:connect(function(character)
+        if not UserInputService.TouchEnabled then
+            initialize()
+        end
+    end)
+    if not UserInputService.TouchEnabled then
+        initialize()
+        if isShiftLockMode() then
+            InputCn = UserInputService.InputBegan:connect(onShiftInputBegan)
+            IsActionBound = true
+        end
+    end
+    enableShiftLock()
+    return ShiftLockController
+    
+end
+coroutine.wrap(OMQRQRC_fake_script)()
+end)
+
+Tab1:Paragraph({
     Title = "以下是飞行区",
     Desc = [[ 👇👇👇👇👇]],
     Image = "eye",
@@ -164,6 +427,58 @@ Toggle(Tab1, "无限跳", false, function(Value)
             game.Players.LocalPlayer.Character.Humanoid:ChangeState("Jumping")
         end
     end)
+end)
+
+Button(Tab1, "爬墙", function() 
+    loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+end)
+
+Tab1:Paragraph({
+    Title = "以下是黑洞区",
+    Desc = [[ 👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "双环控制黑洞", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E5%8F%8C%E7%8E%AF%E6%8E%A7%E5%88%B6%E9%BB%91%E6%B4%9E.txt"))()
+end)
+
+Button(Tab1, "可爱黑洞[英文]", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-AURA/main/kawaii_aura.lua"))()
+end)
+
+Button(Tab1, "哥特风黑洞", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E5%93%A5%E7%89%B9%E9%A3%8E%E9%BB%91%E6%B4%9E.txt"))()
+end)
+
+Button(Tab1, "磁铁黑洞", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ke9460394-dot/ugik/refs/heads/main/%E7%A3%81%E9%93%81%E9%BB%91%E6%B4%9EV2.txt"))()
+end)
+
+Tab1:Paragraph({
+    Title = "以下是关于fps的区",
+    Desc = [[ 👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "fpsBooster(很猛的提升fps)", function() 
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/JoshzzAlteregooo/JoshzzFpsBoosterVersion3/refs/heads/main/JoshzzNewFpsBooster"))()
+end)
+
+Button(Tab1, "fps显示", function() 
+    loadstring(game:HttpGet("https://pastefy.app/d9j82YJr/raw",true))()
 end)
 
 Tab1:Paragraph({
@@ -220,6 +535,57 @@ Tab1:Paragraph({
 
 Button(Tab1, "防坠落", function() 
         loadstring(game:HttpGet('https://raw.githubusercontent.com/Linux6699/DaHubRevival/main/AntiFling.lua'))()
+end)
+
+Button(Tab1, "踏空行走", function() 
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/Float'))()
+end)
+
+Tab1:Paragraph({
+    Title = "以下是传送区",
+    Desc = [[ 👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "点击传送工具", function() 
+    mouse = game.Players.LocalPlayer:GetMouse()
+                tool = Instance.new("Tool")
+                tool.RequiresHandle = false
+                tool.Name = "Click Teleport"
+                tool.Activated:connect(function()
+                local pos = mouse.Hit+Vector3.new(0,2.5,0)
+                pos = CFrame.new(pos.X,pos.Y,pos.Z)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+                end)
+                tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+Tab1:Paragraph({
+    Title = "以下是穿墙区",
+    Desc = [[ 👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Toggle(Tab1, "穿墙", false, function(a)
+    pcall(function()
+        for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+            if v:IsA("BasePart") then
+                v.CanCollide = not a
+            end
+        end
+    end)
 end)
 
 Tab1:Paragraph({
@@ -313,6 +679,26 @@ Toggle(Tab1, "夜视", false, function(a)
         else
             game.Lighting.Ambient = Color3.new(0, 0, 0)
         end
+end)
+
+Button(Tab1, "最大视野缩放", function() 
+    game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 200000
+end)
+
+Button(Tab1, "视野缩放128", function() 
+    game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 128
+end)
+
+Slider(Tab1, "视野缩放距离", 1, 1500, game:GetService("Players").LocalPlayer.CameraMaxZoomDistance, function(a) 
+    game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = a
+end)
+
+Button(Tab1, "广角", function() 
+    Workspace.CurrentCamera.FieldOfView = 120
+end)
+
+Button(Tab1, "恢复视野", function() 
+    Workspace.CurrentCamera.FieldOfView = 70
 end)
 
 local espEnabled = false
@@ -959,6 +1345,36 @@ Button(Tab3, "自瞄", function()
     end)
 end)
 
+Input(Tabc, "自定义范围", "输入HitBox大小", "10", "例如: 20", function(Value)
+    local numValue = tonumber(Value)
+    if numValue then
+        _G.HeadSize = numValue
+        _G.Disabled = true
+        
+        if _G.HitboxLoop then
+            _G.HitboxLoop:Disconnect()
+        end
+        
+        _G.HitboxLoop = game:GetService('RunService').RenderStepped:Connect(function()
+            if _G.Disabled then
+                for i, v in pairs(game:GetService('Players'):GetPlayers()) do
+                    if v.Name ~= game:GetService('Players').LocalPlayer.Name and v.Character then
+                        pcall(function()
+                            local humanoidRootPart = v.Character:FindFirstChild("HumanoidRootPart")
+                            if humanoidRootPart then
+                                humanoidRootPart.Size = Vector3.new(_G.HeadSize, _G.HeadSize, _G.HeadSize)
+                                humanoidRootPart.Transparency = 0.7
+                                humanoidRootPart.BrickColor = BrickColor.new("Really red")
+                                humanoidRootPart.Material = "Neon"
+                                humanoidRootPart.CanCollide = false
+                            end
+                        end)
+                    end
+                end
+            end
+        end)
+end)
+
 Button(Tab4, "HB 子追", function() 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HB-ksdb/-4/main/%E5%AD%90%E8%BF%BD%E8%84%9A%E6%9C%AC%E7%A9%BF%E5%A2%99.lua"))()
 end)
@@ -1094,4 +1510,20 @@ end)
 
 Button(Tabb, "折叠UI", function()
     Window:Close()
+end)
+
+Button(Tabb, "重置人物", function() 
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+Button(Tabb, "重进服务器", function() 
+    game:GetService("TeleportService"):TeleportToPlaceInstance(
+            game.PlaceId,
+            game.JobId,
+            game:GetService("Players").LocalPlayer
+        )
+end)
+
+Button(Tabb, "离开服务器", function() 
+    game:Shutdown()
 end)
