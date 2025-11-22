@@ -1345,19 +1345,31 @@ Button(Tab3, "自瞄", function()
     end)
 end)
 
+_G.HitboxEnabled = false
+_G.HeadSize = 10
+_G.HitboxLoop = nil
+
 Input(Tabc, "自定义范围", "输入HitBox大小", "10", "例如: 20", function(Value)
     local numValue = tonumber(Value)
     if numValue then
         _G.HeadSize = numValue
-        _G.Disabled = true
-        
+        print("HitBox大小已设置为: " .. _G.HeadSize)
+    else
+        warn("请输入有效的数字")
+    end
+end)
+
+Toggle(Tabc, "启用自定义范围", false, function(Value)
+    _G.HitboxEnabled = Value
+    
+    if Value then
         if _G.HitboxLoop then
             _G.HitboxLoop:Disconnect()
             _G.HitboxLoop = nil
         end
         
         _G.HitboxLoop = game:GetService('RunService').RenderStepped:Connect(function()
-            if _G.Disabled then
+            if _G.HitboxEnabled then
                 for _, player in ipairs(game.Players:GetPlayers()) do
                     if player ~= game.Players.LocalPlayer and player.Character then
                         pcall(function()
@@ -1374,13 +1386,29 @@ Input(Tabc, "自定义范围", "输入HitBox大小", "10", "例如: 20", functio
                 end
             end
         end)
+        print("自定义范围已开启，大小: " .. _G.HeadSize)
     else
-        warn("请输入有效的数字")
+        if _G.HitboxLoop then
+            _G.HitboxLoop:Disconnect()
+            _G.HitboxLoop = nil
+        end
+        
+        for _, player in ipairs(game.Players:GetPlayers()) do
+            if player ~= game.Players.LocalPlayer and player.Character then
+                pcall(function()
+                    local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
+                    if humanoidRootPart then
+                        humanoidRootPart.Size = Vector3.new(2, 2, 1)  -- 恢复默认大小
+                        humanoidRootPart.Transparency = 0  -- 恢复透明度
+                        humanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")  -- 恢复颜色
+                        humanoidRootPart.Material = "Plastic"  -- 恢复材质
+                    end
+                end)
+            end
+        end
+        print("自定义范围已关闭")
     end
 end)
-
-
-
 
 Button(Tab4, "HB 子追", function() 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HB-ksdb/-4/main/%E5%AD%90%E8%BF%BD%E8%84%9A%E6%9C%AC%E7%A9%BF%E5%A2%99.lua"))()
