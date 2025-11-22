@@ -61,6 +61,9 @@ local Tab1 = Tab("通用")
 local Tab2 = Tab("ESP")
 local Tab3 = Tab("自瞄")
 local Tab4 = Tab("子追")
+local Tab5 = Tab("力量传奇")
+local Tab6 = Tab("忍者传奇")
+local Tab7 = Tab("极速传奇")
 local Tabb = Tab("设置")
 
 local player = game.Players.LocalPlayer
@@ -954,6 +957,127 @@ end)
 
 Button(Tab4, "俄州子追", function() 
     loadstring(game:HttpGet("https://gist.githubusercontent.com/ClasiniZukov/e7547e7b48fa90d10eb7f85bd3569147/raw/f95cd3561a3bb3ac6172a14eb74233625b52e757/gistfile1.txt"))()
+end)
+
+Button(Tab5, "汉化老外脚本", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/vv/49b52c1e1f2a68d22ec0abec4b5d7068190056a9/w"))()
+end)
+
+Button(Tab5, "也是汉化老外", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/vv/24873082e923de2afc31f715e71192ee80e405bb/%E5%8A%9B%E9%87%8F%E4%BC%A0%E5%A5%87%E6%9C%80%E5%BC%BA%E6%B5%8B%E8%AF%95.txt"))()
+end)
+
+Toggle(Tab5, "自动比赛", false, function(state)
+    MuscleLegends.AutoBrawl = state
+    if state then
+        spawn(function()
+            while MuscleLegends.AutoBrawl do
+                wait(2)
+                game:GetService("ReplicatedStorage").rEvents.brawlEvent:FireServer("joinBrawl")
+            end
+        end)
+    end
+end)
+
+Toggle(Tab5, "自动举哑铃", false, function(state)
+    MuscleLegends.AutoWeight = state
+    if state then
+        spawn(function()
+            local part = Instance.new('Part', workspace)
+            part.Size = Vector3.new(500, 20, 530.1)
+            part.Position = Vector3.new(0, 100000, 133.15)
+            part.CanCollide = true
+            part.Anchored = true
+
+            while MuscleLegends.AutoWeight do
+                wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame + Vector3.new(0, 50, 0)
+                for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ClassName == "Tool" and v.Name == "Weight" then
+                        v.Parent = game.Players.LocalPlayer.Character
+                    end
+                end
+                game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+            end
+
+            
+            if part then part:Destroy() end
+        end)
+    end
+end)
+
+Toggle(Tab5, "自动俯卧撑", false, function(state)
+    MuscleLegends.AutoPushups = state
+    if state then
+        spawn(function()
+            local part = Instance.new('Part', workspace)
+            part.Size = Vector3.new(500, 20, 530.1)
+            part.Position = Vector3.new(0, 100000, 133.15)
+            part.CanCollide = true
+            part.Anchored = true
+
+            while MuscleLegends.AutoPushups do
+                wait()
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame + Vector3.new(0, 50, 0)
+                for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ClassName == "Tool" and v.Name == "Pushups" then
+                        v.Parent = game.Players.LocalPlayer.Character
+                    end
+                end
+                game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+            end
+
+            if part then part:Destroy() end
+        end)
+    end
+end)
+
+Toggle(Tab5, "自动重生", false, function(state)
+    MuscleLegends.AutoRebirth = state
+    if state then
+        spawn(function()
+            while MuscleLegends.AutoRebirth do
+                wait()
+                game:GetService("ReplicatedStorage").rEvents.rebirthRemote:InvokeServer("rebirthRequest")
+            end
+        end)
+    end
+end)
+
+Button(Tab6, "不知名1", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/1"))()
+end)
+
+Button(Tab6, "不知名2", function() 
+        loadstring(game:HttpGet("https://pastebin.com/raw/2UjrXwTV"))()
+end)
+
+Button(Tab6, "挂机", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ThatBlueDevil/Bleus/main/Ninja%20Legends/Source.lua"))()
+end)
+
+Button(Tab6, "无限金币", function() 
+        loadstring(game:HttpGet("https://raw.github.com/VcPa/V/main/v"))()
+end)
+
+Button(Tab7, "刷经验", function() 
+        loadstring(game:HttpGet("https://pastebin.com/raw/9KWQXasx"))()
+end)
+
+Button(Tab7, "不知名", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TtmScripter/GoodScript/main/LegendOfSpeed(Chinese)"))()
+end)
+
+Button(Tab7, "不知名2", function() 
+        loadstring(game:HttpGet("https://pastebin.com/raw/cwCdNqds"))()
+end)
+
+Button(Tab7, "整合", function() 
+        loadstring(Game:HttpGet("https://pastebin.com/raw/0A4J7V8M"))()
+end)
+
+Button(Tab7, "加载时间比较长但好用", function() 
+        loadstring(game:HttpGet("https://pastebin.com/raw/tUfDyUfz"))()
 end)
 
 Button(Tabb, "折叠UI", function()
