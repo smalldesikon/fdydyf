@@ -1,3 +1,11 @@
+if _G.XION_Script_Loaded then
+    _G.XION_Execution_Count = (_G.XION_Execution_Count or 0) + 1
+    return
+end
+
+_G.XION_Script_Loaded = true
+_G.XION_Execution_Count = 1
+
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local Window = WindUI:CreateWindow({
     Title = "XION脚本",
