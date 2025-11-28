@@ -1406,10 +1406,10 @@ Toggle(Tabc, "启用自定义范围", false, function(Value)
                 pcall(function()
                     local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
                     if humanoidRootPart then
-                        humanoidRootPart.Size = Vector3.new(2, 2, 1)  -- 恢复默认大小
-                        humanoidRootPart.Transparency = 0  -- 恢复透明度
-                        humanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")  -- 恢复颜色
-                        humanoidRootPart.Material = "Plastic"  -- 恢复材质
+                        humanoidRootPart.Size = Vector3.new(2, 2, 1)
+                        humanoidRootPart.Transparency = 0
+                        humanoidRootPart.BrickColor = BrickColor.new("Medium stone grey")
+                        humanoidRootPart.Material = "Plastic"
                     end
                 end)
             end
