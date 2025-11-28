@@ -111,7 +111,19 @@ Taba:Paragraph({
 })
 
 Taba:Paragraph({
-    Title = "本人在此声明：封号司空概不负责",
+    Title = "本人在此声明：封号与本脚本无关",
+    Desc = [[ ]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Tab1:Paragraph({
+    Title = "星期五下午到星期天中午之间司空是在线的",
     Desc = [[ ]],
     Image = "eye",
     ImageSize = 24,
