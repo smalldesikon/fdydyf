@@ -11,6 +11,7 @@ local Window = WindUI:CreateWindow({
     Title = "XION脚本",
     Icon = "crown",
     Author = "司空制作",
+    AuthorImage = 90840643379863,
     Folder = "CloudHub",
     Size = UDim2.fromOffset(560, 360),
     Transparent = true,
