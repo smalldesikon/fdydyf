@@ -9,7 +9,7 @@ _G.XION_Execution_Count = 1
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local Window = WindUI:CreateWindow({
     Title = "XION脚本",
-    Icon = "door-open",
+    Icon = "crown",
     Author = "司空制作",
     Folder = "CloudHub",
     Size = UDim2.fromOffset(560, 360),
@@ -26,7 +26,7 @@ local Window = WindUI:CreateWindow({
 Window:EditOpenButton(
     {
         Title = "XION",
-        Icon = "leaf",
+        Icon = "crown",
         CornerRadius = UDim.new(0, 13),
         StrokeThickness = 4,
         Color = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.fromRGB(186, 19, 19)),ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 60, 129))}),
@@ -73,6 +73,7 @@ local Tabc = Tab("范围")
 local Tab5 = Tab("力量传奇")
 local Tab6 = Tab("忍者传奇")
 local Tab7 = Tab("极速传奇")
+local Tabd = Tab("催更地点")
 local Tabb = Tab("设置")
 
 local player = game.Players.LocalPlayer
@@ -122,24 +123,24 @@ Taba:Paragraph({
     Padding = UDim.new(0, 1)
 })
 
-Tab1:Paragraph({
+Taba:Paragraph({
     Title = "星期五下午到星期天中午之间司空是在线的",
     Desc = [[ ]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
-    OutlineColor = Color3.fromHex("#FFFFFF"),
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
+    OutlineColor = Color3.fromHex("#000000"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
 })
-
 Taba:Paragraph({
     Title = "计划缝合50个服务器😋😋",
     Desc = [[ ]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
+    Color = Color3.fromHex("#000000"),
     BackgroundTransparency = 1,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
@@ -155,7 +156,7 @@ Tab1:Paragraph({
     Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
+    Color = Color3.fromHex("#000000"),
     BackgroundTransparency = 1,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
@@ -414,11 +415,12 @@ end)
 
 Tab1:Paragraph({
     Title = "以下是飞行区",
-    Desc = [[ 👇👇👇👇👇]],
+    Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -458,8 +460,9 @@ Tab1:Paragraph({
     Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -482,12 +485,13 @@ Button(Tab1, "磁铁黑洞", function()
 end)
 
 Tab1:Paragraph({
-    Title = "以下是关于fps的区",
+    Title = "以下是fps区",
     Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -503,27 +507,28 @@ end)
 
 Tab1:Paragraph({
     Title = "以下是回溯区",
-    Desc = [[ 👇👇👇👇👇]],
+    Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
 })
-
 Button(Tab1, "回溯", function() 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/MSTTOPPER/Scripts/refs/heads/main/FlashBack"))()
 end)
 
 Tab1:Paragraph({
     Title = "以下是甩飞区",
-    Desc = [[ 👇👇👇👇👇]],
+    Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -546,8 +551,9 @@ Tab1:Paragraph({
     Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -566,8 +572,9 @@ Tab1:Paragraph({
     Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -591,8 +598,9 @@ Tab1:Paragraph({
     Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -610,11 +618,12 @@ end)
 
 Tab1:Paragraph({
     Title = "以下是旋转区",
-    Desc = [[ 👇👇👇👇👇]],
+    Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -637,8 +646,9 @@ Tab1:Paragraph({
     Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -653,8 +663,9 @@ Tab1:Paragraph({
     Desc = [[ 👇👇👇]],
     Image = "eye",
     ImageSize = 24,
-    Color = Color3.fromHex("#FFFFFF"),
-    BackgroundTransparency = 1,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
     OutlineColor = Color3.fromHex("#FFFFFF"),
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
@@ -693,6 +704,35 @@ runService.Heartbeat:Connect(function()
 end)
 end)
 
+local deleteShadowsEnabled = false
+
+Toggle(Tab1, "删除阴影", deleteShadowsEnabled, function(state)
+    deleteShadowsEnabled = state
+    
+    if deleteShadowsEnabled then
+        if game:GetService("Lighting").GlobalShadows then
+            game:GetService("Lighting").GlobalShadows = false
+        end
+        if game:GetService("Lighting").ShadowSoftness then
+            game:GetService("Lighting").ShadowSoftness = 0
+        end
+        
+        for _, obj in pairs(game:GetDescendants()) do
+            if obj:IsA("Part") or obj:IsA("MeshPart") or obj:IsA("UnionOperation") then
+                obj.CastShadow = false
+            end
+        end
+        print("删除阴影已开启")
+    else
+        if game:GetService("Lighting").GlobalShadows then
+            game:GetService("Lighting").GlobalShadows = true
+        end
+        if game:GetService("Lighting").ShadowSoftness then
+            game:GetService("Lighting").ShadowSoftness = 1
+        end
+        print("删除阴影已关闭")
+    end
+end)
 Toggle(Tab1, "夜视", false, function(a)
         if a then
             game.Lighting.Ambient = Color3.new(1, 1, 1)
@@ -1577,6 +1617,23 @@ Button(Tabb, "重进服务器", function()
             game.JobId,
             game:GetService("Players").LocalPlayer
         )
+end)
+
+Tabd:Paragraph({
+    Title = "臭司空不更新怎么办？",
+    Desc = [[直接加qq😋]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tabd, "司空私人qq号码[点我复制]", function()
+    setclipboard("766219127")
 end)
 
 Button(Tabb, "离开服务器", function() 
