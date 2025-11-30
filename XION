@@ -74,6 +74,7 @@ local Tabc = Tab("范围")
 local Tab5 = Tab("力量传奇")
 local Tab6 = Tab("忍者传奇")
 local Tab7 = Tab("极速传奇")
+local Tab8 = Tab("墨水游戏")
 local Tabd = Tab("催更地点")
 local Tabb = Tab("设置")
 
@@ -1606,6 +1607,26 @@ end)
 
 Button(Tab7, "加载时间比较长但好用", function() 
         loadstring(game:HttpGet("https://pastebin.com/raw/tUfDyUfz"))()
+end)
+
+Button(Tab8, "好用但是英文", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/bored"))()
+end)
+
+Button(Tab8, "好用", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TuffGuys/TuffGuys/refs/heads/main/Loader"))()
+end)
+
+Button(Tab8, "国人脚本", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/refs/heads/main/Games/墨水游戏.lua"))()
+end)
+
+Button(Tab8, "Ringta", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/Ringta"))()
+end)
+
+Button(Tab8, "汉化", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MTHNBBN666/ZCQNB/refs/heads/main/obfuscated_script-1758110200696.lua?token=GHSAT0AAAAAADK2JG5XSS6JLPAPDDB44DJE2GL6OCQ"))()
 end)
 
 Button(Tabb, "折叠UI", function()
