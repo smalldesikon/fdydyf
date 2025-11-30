@@ -74,6 +74,7 @@ local Tabc = Tab("范围")
 local Tab5 = Tab("力量传奇")
 local Tab6 = Tab("忍者传奇")
 local Tab7 = Tab("极速传奇")
+local TabAI = Tab("AI聊天")
 local Tabd = Tab("催更地点")
 local Tabb = Tab("设置")
 
@@ -427,9 +428,13 @@ Tab1:Paragraph({
     Padding = UDim.new(0, 1)
 })
 
-Button(Tab1, "普通飞行", function() 
-        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\112\97\115\116\101\98\105\110\46\99\111\109\47\114\97\119\47\90\66\122\99\84\109\49\102\34\41\41\40\41\10")()
+Button(Tab1, "XION飞行", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/fdydyf/main/XION%20fly"))()
 end) 
+
+Button(Tab1, "XION飞车", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/fdydyf/main/XION%E9%A3%9E%E8%BD%A6"))()
+end)
 
 Button(Tab1, "飞行v4", function() 
         loadstring(game:HttpGet("https://dpaste.org/PE88V/raw"))()
@@ -1618,6 +1623,129 @@ Button(Tabb, "重进服务器", function()
             game.JobId,
             game:GetService("Players").LocalPlayer
         )
+end)
+
+local chatContainer = Instance.new("ScrollingFrame")
+chatContainer.Name = "ChatContainer"
+chatContainer.Size = UDim2.new(0.95, 0, 0.7, 0)
+chatContainer.Position = UDim2.new(0.025, 0, 0.05, 0)
+chatContainer.BackgroundTransparency = 0.3
+chatContainer.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+chatContainer.ScrollBarThickness = 8
+chatContainer.Parent = TabAI
+
+local chatMessages = Instance.new("UIListLayout")
+chatMessages.Parent = chatContainer
+chatMessages.Padding = UDim.new(0, 8)
+
+local function addMessage(text, isUser)
+    local msgFrame = Instance.new("Frame")
+    msgFrame.Size = UDim2.new(0.9, 0, 0, 0)
+    msgFrame.BackgroundTransparency = 0.2
+    if isUser then
+        msgFrame.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
+        msgFrame.Position = UDim2.new(0.05, 0, 0, 0)
+    else
+        msgFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+        msgFrame.Position = UDim2.new(0.05, 0, 0, 0)
+    end
+    msgFrame.LayoutOrder = #chatMessages:GetChildren() + 1
+    msgFrame.Parent = chatContainer
+
+    local msgLabel = Instance.new("TextLabel")
+    msgLabel.Size = UDim2.new(1, 0, 1, 0)
+    msgLabel.BackgroundTransparency = 1
+    msgLabel.Text = text
+    msgLabel.TextColor3 = Color3.new(1, 1, 1)
+    msgLabel.TextWrapped = true
+    msgLabel.TextXAlignment = isUser and Enum.TextXAlignment.Left or Enum.TextXAlignment.Left
+    msgLabel.Font = Enum.Font.SourceSans
+    msgLabel.TextSize = 14
+    msgLabel.Parent = msgFrame
+
+    chatContainer.CanvasSize = UDim2.new(0, 0, 0, chatMessages.AbsoluteContentSize.Y)
+end
+
+local inputBox = Instance.new("TextBox")
+inputBox.Name = "ChatInput"
+inputBox.Size = UDim2.new(0.75, 0, 0.06, 0)
+inputBox.Position = UDim2.new(0.05, 0, 0.8, 0)
+inputBox.BackgroundTransparency = 0.3
+inputBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+inputBox.TextColor3 = Color3.new(1, 1, 1)
+inputBox.Text = ""
+inputBox.MultiLine = false
+inputBox.PlaceholderText = "输入你的问题..."
+inputBox.ClearTextOnFocus = true
+inputBox.Parent = TabAI
+
+local sendButton = Instance.new("TextButton")
+sendButton.Name = "SendButton"
+sendButton.Size = UDim2.new(0.15, 0, 0.06, 0)
+sendButton.Position = UDim2.new(0.82, 0, 0.8, 0)
+sendButton.BackgroundTransparency = 0.3
+sendButton.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
+sendButton.TextColor3 = Color3.new(1, 1, 1)
+sendButton.Text = "发送"
+sendButton.Font = Enum.Font.SourceSans
+sendButton.TextScaled = false
+sendButton.TextSize = 14
+sendButton.Parent = TabAI
+
+local API_KEY = "sk-aa4018ed6a5745dc844fd78ef81a1c09"
+local MODEL = "deepseek-chat"
+
+local function sendMessageToAI(prompt)
+    local url = "https://api.deepseek.com/v1/chat/completions"
+
+    local headers = {
+        ["Authorization"] = "Bearer " .. API_KEY,
+        ["Content-Type"] = "application/json",
+    }
+
+    local body = {
+        model = MODEL,
+        messages = {
+            { role = "user", content = prompt },
+        },
+    }
+
+    local success, response = pcall(function()
+        return game:HttpGetAsync(url, {
+            Headers = headers,
+            Body = game:GetService("HttpService"):JSONEncode(body),
+            Method = "POST",
+        })
+    end)
+
+    if success then
+        local jsonData = game:GetService("HttpService"):JSONDecode(response)
+        if jsonData and jsonData.choices and jsonData.choices[1] and jsonData.choices[1].message and jsonData.choices[1].message.content then
+            local aiReply = jsonData.choices[1].message.content
+            addMessage(aiReply, false)
+        else
+            addMessage("❌ AI回复格式错误或为空", false)
+        end
+    else
+        addMessage("❌ 请求失败: " .. tostring(response), false)
+    end
+end
+
+sendButton.MouseButton1Click:Connect(function()
+    local userInput = inputBox.Text
+    if userInput and userInput ~= "" then
+        addMessage(userInput, true)
+        inputBox.Text = ""
+        sendMessageToAI(userInput)
+    else
+        addMessage("⚠️ 请输入问题", false)
+    end
+end)
+
+inputBox.FocusLost:Connect(function(enterPressed)
+    if enterPressed then
+        sendButton.MouseButton1Click:Fire()
+    end
 end)
 
 Tabd:Paragraph({
