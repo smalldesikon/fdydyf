@@ -566,8 +566,8 @@ Tab1:Paragraph({
     Padding = UDim.new(0, 1)
 })
 
-Button(Tab1, "防坠落", function() 
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Linux6699/DaHubRevival/main/AntiFling.lua'))()
+Button(Tab1, "防坠落 by西班牙", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/5twh2hsf9j-byte/BowenPrime67/refs/heads/main/Python"))()
 end)
 
 Button(Tab1, "踏空行走", function() 
