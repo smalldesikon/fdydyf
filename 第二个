@@ -71,10 +71,11 @@ local Tab2 = Tab("ESP")
 local Tab3 = Tab("自瞄")
 local Tab4 = Tab("子追")
 local Tabc = Tab("范围")
+local Tabjb = Tab("各大脚本")
 local Tab5 = Tab("力量传奇")
 local Tab6 = Tab("忍者传奇")
 local Tab7 = Tab("极速传奇")
-local TabAI = Tab("AI聊天")
+local Tab8 = Tab("墨水游戏")
 local Tabd = Tab("催更地点")
 local Tabb = Tab("设置")
 
@@ -565,8 +566,8 @@ Tab1:Paragraph({
     Padding = UDim.new(0, 1)
 })
 
-Button(Tab1, "防坠落", function() 
-        loadstring(game:HttpGet('https://raw.githubusercontent.com/Linux6699/DaHubRevival/main/AntiFling.lua'))()
+Button(Tab1, "防坠落 by西班牙", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/5twh2hsf9j-byte/BowenPrime67/refs/heads/main/Python"))()
 end)
 
 Button(Tab1, "踏空行走", function() 
@@ -1488,6 +1489,105 @@ Button(Tab4, "俄州子追", function()
     loadstring(game:HttpGet("https://gist.githubusercontent.com/ClasiniZukov/e7547e7b48fa90d10eb7f85bd3569147/raw/f95cd3561a3bb3ac6172a14eb74233625b52e757/gistfile1.txt"))()
 end)
 
+--=======姥爷司空别翻过头了===========
+--=======姥爷司空别翻过头了===========
+--=======姥爷司空别翻过头了===========
+--=======姥爷司空别翻过头了===========
+Button(Tab1, "点击此处复制司空私人qq以提供你的脚本", function()
+    setclipboard("766219127")
+end)
+
+Button(Tabjb, "殺脚本", function() 
+        FengYu_HUB = "殺脚本"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FengYu-3/FengYu/refs/heads/Feng/QQ1926190957"))()
+end)
+
+Button(Tabjb, "德与中山[免费版]", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/dream77239/Deyu-Zhongshan/refs/heads/main/%E5%BE%B7%E4%B8%8E%E4%B8%AD%E5%B1%B1.txt"))()
+end)
+
+Button(Tabjb, "点我复制免费版q群获取卡密", function()
+    setclipboard("1040970564")
+end)
+
+Button(Tabjb, "皮脚本", function() 
+        getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
+end)
+
+Button(Tabjb, "xa", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XingFork/Scripts/refs/heads/main/Loader"))()
+end)
+
+Button(Tabjb, "xk", function() 
+        loadstring(game:HttpGet(('https://github.com/devslopo/DVES/raw/main/XK%20Hub')))()
+end)
+
+Button(Tabjb, "混脚本", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/wocaonima/main/sikon.txt"))()
+end)
+
+Button(Tabjb, "皮空", function() 
+        Pikon_script = "司空，皮炎制作"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/eyidfki/840d4b80d4f312c70b7b1067e056a2c4f828ef32/%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC(%E6%B7%B7%E6%B7%86%E5%90%8E).txt"))()
+end)
+
+Button(Tabjb, "冷脚本", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/odhdshhe/leng5/refs/heads/main/leng5.lua"))()
+end)
+
+Button(Tabjb, "蛊脚本 卡密：坚持", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/sdxs221/-/main/爱别离"))()
+end)
+
+Button(Tabjb, "kg脚本", function() 
+        KG_SCRIPT = "张硕制作"
+loadstring(game:HttpGet("https://github.com/ZS-NB/KG/raw/main/Zhang-Shuo.lua"))()
+end)
+
+Button(Tabjb, "DOLL", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/lool8/-/refs/heads/main/DOLL.lua"))()
+end)
+
+Button(Tabjb, "WTB", function() 
+        getgenv().ADittoKey = "WTB_FREEKEY"pcall(function()    loadstring(game:HttpGet("https://raw.githubusercontent.com/Potato5466794/GC-WTB/refs/heads/main/Loader/Loader.luau", true))()end)
+end)
+
+Button(Tabjb, "SX hub", function() 
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/87a8a4f4c2d2ef535ccd1bdb949218fe.lua"))()
+end)
+
+Button(Tabjb, "云脚本", function() 
+        loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\103\105\116\104\117\98\46\99\111\109\47\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\73\108\47\77\105\97\110\47\114\97\119\47\109\97\105\110\47\228\186\145\232\132\154\230\156\172\46\108\117\97\117\34\44\32\116\114\117\101\41\41\40\41\10")()
+end)
+
+Button(Tabjb, "天脚本", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XTScripthub/Ohio/main/tianscript"))()
+end)
+
+Button(Tabjb, "大司马脚本", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/whenheer/-v4/refs/heads/main/Protected_5320244476072095.lua"))()
+end)
+
+Button(Tabjb, "小凌脚本", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/flyspeed7/Xiao-Ling-1.3-Script/main/%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC%E5%B0%8F%E5%87%8C%E8%84%9A%E6%9C%AC.Lua"))()
+end)
+
+Button(Tabjb, "WX脚本[免费]", function() 
+        loadstring(game:HttpGet("https://pastefy.app/vA6Y2jrc/raw"))()
+end)
+
+Button(Tab1, "复制WX卡密", function()
+    setclipboard("WX_1q64jf")
+end)
+
+Button(Tabjb, "旧冬脚本", function() 
+        getgenv().XiaoXu="旧冬Q群467989227"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XiaoXuCynic/XiaoXu-s-Script/refs/heads/main/%E6%97%A7%E5%86%ACV1%E6%B7%B7%E6%B7%86.lua.txt"))()
+end)
+--=======姥爷司空别翻过头了===========
+--=======姥爷司空别翻过头了===========
+--=======姥爷司空别翻过头了===========
+--=======姥爷司空别翻过头了===========
 Button(Tab5, "汉化老外脚本", function() 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/vv/49b52c1e1f2a68d22ec0abec4b5d7068190056a9/w"))()
 end)
@@ -1609,6 +1709,38 @@ Button(Tab7, "加载时间比较长但好用", function()
         loadstring(game:HttpGet("https://pastebin.com/raw/tUfDyUfz"))()
 end)
 
+Button(Tab8, "好用但是英文", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/bored"))()
+end)
+
+Button(Tab8, "好用", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TuffGuys/TuffGuys/refs/heads/main/Loader"))()
+end)
+
+Button(Tab8, "国人脚本", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Xingtaiduan/Script/refs/heads/main/Games/墨水游戏.lua"))()
+end)
+
+Button(Tab8, "Ringta", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/Ringta"))()
+end)
+
+Button(Tab8, "汉化", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/MTHNBBN666/ZCQNB/refs/heads/main/obfuscated_script-1758110200696.lua?token=GHSAT0AAAAAADK2JG5XSS6JLPAPDDB44DJE2GL6OCQ"))()
+end)
+
+Button(Tab8, "好用的汉化", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/TexRBLlX"))()
+end)
+
+Button(Tab8, "kr", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/OK/refs/heads/main/sb"))()
+end)
+
+Button(Tab8, "bored汉化", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/bored"))()
+end)
+
 Button(Tabb, "折叠UI", function()
     Window:Close()
 end)
@@ -1623,129 +1755,6 @@ Button(Tabb, "重进服务器", function()
             game.JobId,
             game:GetService("Players").LocalPlayer
         )
-end)
-
-local chatContainer = Instance.new("ScrollingFrame")
-chatContainer.Name = "ChatContainer"
-chatContainer.Size = UDim2.new(0.95, 0, 0.7, 0)
-chatContainer.Position = UDim2.new(0.025, 0, 0.05, 0)
-chatContainer.BackgroundTransparency = 0.3
-chatContainer.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-chatContainer.ScrollBarThickness = 8
-chatContainer.Parent = TabAI
-
-local chatMessages = Instance.new("UIListLayout")
-chatMessages.Parent = chatContainer
-chatMessages.Padding = UDim.new(0, 8)
-
-local function addMessage(text, isUser)
-    local msgFrame = Instance.new("Frame")
-    msgFrame.Size = UDim2.new(0.9, 0, 0, 0)
-    msgFrame.BackgroundTransparency = 0.2
-    if isUser then
-        msgFrame.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
-        msgFrame.Position = UDim2.new(0.05, 0, 0, 0)
-    else
-        msgFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-        msgFrame.Position = UDim2.new(0.05, 0, 0, 0)
-    end
-    msgFrame.LayoutOrder = #chatMessages:GetChildren() + 1
-    msgFrame.Parent = chatContainer
-
-    local msgLabel = Instance.new("TextLabel")
-    msgLabel.Size = UDim2.new(1, 0, 1, 0)
-    msgLabel.BackgroundTransparency = 1
-    msgLabel.Text = text
-    msgLabel.TextColor3 = Color3.new(1, 1, 1)
-    msgLabel.TextWrapped = true
-    msgLabel.TextXAlignment = isUser and Enum.TextXAlignment.Left or Enum.TextXAlignment.Left
-    msgLabel.Font = Enum.Font.SourceSans
-    msgLabel.TextSize = 14
-    msgLabel.Parent = msgFrame
-
-    chatContainer.CanvasSize = UDim2.new(0, 0, 0, chatMessages.AbsoluteContentSize.Y)
-end
-
-local inputBox = Instance.new("TextBox")
-inputBox.Name = "ChatInput"
-inputBox.Size = UDim2.new(0.75, 0, 0.06, 0)
-inputBox.Position = UDim2.new(0.05, 0, 0.8, 0)
-inputBox.BackgroundTransparency = 0.3
-inputBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-inputBox.TextColor3 = Color3.new(1, 1, 1)
-inputBox.Text = ""
-inputBox.MultiLine = false
-inputBox.PlaceholderText = "输入你的问题..."
-inputBox.ClearTextOnFocus = true
-inputBox.Parent = TabAI
-
-local sendButton = Instance.new("TextButton")
-sendButton.Name = "SendButton"
-sendButton.Size = UDim2.new(0.15, 0, 0.06, 0)
-sendButton.Position = UDim2.new(0.82, 0, 0.8, 0)
-sendButton.BackgroundTransparency = 0.3
-sendButton.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
-sendButton.TextColor3 = Color3.new(1, 1, 1)
-sendButton.Text = "发送"
-sendButton.Font = Enum.Font.SourceSans
-sendButton.TextScaled = false
-sendButton.TextSize = 14
-sendButton.Parent = TabAI
-
-local API_KEY = "sk-aa4018ed6a5745dc844fd78ef81a1c09"
-local MODEL = "deepseek-chat"
-
-local function sendMessageToAI(prompt)
-    local url = "https://api.deepseek.com/v1/chat/completions"
-
-    local headers = {
-        ["Authorization"] = "Bearer " .. API_KEY,
-        ["Content-Type"] = "application/json",
-    }
-
-    local body = {
-        model = MODEL,
-        messages = {
-            { role = "user", content = prompt },
-        },
-    }
-
-    local success, response = pcall(function()
-        return game:HttpGetAsync(url, {
-            Headers = headers,
-            Body = game:GetService("HttpService"):JSONEncode(body),
-            Method = "POST",
-        })
-    end)
-
-    if success then
-        local jsonData = game:GetService("HttpService"):JSONDecode(response)
-        if jsonData and jsonData.choices and jsonData.choices[1] and jsonData.choices[1].message and jsonData.choices[1].message.content then
-            local aiReply = jsonData.choices[1].message.content
-            addMessage(aiReply, false)
-        else
-            addMessage("❌ AI回复格式错误或为空", false)
-        end
-    else
-        addMessage("❌ 请求失败: " .. tostring(response), false)
-    end
-end
-
-sendButton.MouseButton1Click:Connect(function()
-    local userInput = inputBox.Text
-    if userInput and userInput ~= "" then
-        addMessage(userInput, true)
-        inputBox.Text = ""
-        sendMessageToAI(userInput)
-    else
-        addMessage("⚠️ 请输入问题", false)
-    end
-end)
-
-inputBox.FocusLost:Connect(function(enterPressed)
-    if enterPressed then
-        sendButton.MouseButton1Click:Fire()
-    end
 end)
 
 Tabd:Paragraph({
