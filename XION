@@ -1527,7 +1527,7 @@ end)
 --=======姥爷司空别翻过头了===========
 --=======姥爷司空别翻过头了===========
 --=======姥爷司空别翻过头了===========
-Button(Tab1, "点击此处复制司空私人qq以提供你的脚本", function()
+Button(Tabjb, "点击此处复制司空私人qq以提供你的脚本", function()
     setclipboard("766219127")
 end)
 
@@ -1610,7 +1610,7 @@ Button(Tabjb, "WX脚本[免费]", function()
         loadstring(game:HttpGet("https://pastefy.app/vA6Y2jrc/raw"))()
 end)
 
-Button(Tab1, "复制WX卡密", function()
+Button(Tabjb, "复制WX卡密", function()
     setclipboard("WX_1q64jf")
 end)
 
