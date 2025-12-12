@@ -1881,6 +1881,18 @@ Button(Tab8, "bored汉化", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/bored"))()
 end)
 
+Button(Tab8, "NOT hub", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/nothubbb/Ink-game-/refs/heads/main/Inkgame.lua"))()
+end)
+
+Button(Tab8, "很强", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/eikikrkr-ux/bypasok/refs/heads/main/ok"))()
+end)
+
+Button(Tab8, "自动胜利", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wefwef34/inkgames.github.io/refs/heads/main/ringta.lua"))()
+end)
+
 Button(Tab9, "老外op", function() 
         loadstring(game:HttpGet('https://codeberg.org/NTDCore/FPES/raw/branch/main/main.lua', true))()
 end)
