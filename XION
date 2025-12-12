@@ -6,11 +6,13 @@ end
 _G.XION_Script_Loaded = true
 _G.XION_Execution_Count = 1
 
+game.StarterGui:SetCore("SendNotification", {Title = "通知", Text = "已开启反挂机v2", Duration = 5})
+wait(1.5)
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 local Window = WindUI:CreateWindow({
     Title = "XION脚本",
     Icon = "crown",
-    Author = "司空制作",
+    Author = "司空制作"",
     AuthorImage = 90840643379863,
     Folder = "CloudHub",
     Size = UDim2.fromOffset(560, 360),
@@ -68,6 +70,7 @@ end
 local Taba = Tab("首页")
 local Tab1 = Tab("通用")
 local TabFE = Tab("FE")
+local Tabyl = Tab("娱乐")
 local Tab2 = Tab("ESP")
 local Tab3 = Tab("自瞄")
 local Tab4 = Tab("子追")
@@ -77,6 +80,11 @@ local Tab5 = Tab("力量传奇")
 local Tab6 = Tab("忍者传奇")
 local Tab7 = Tab("极速传奇")
 local Tab8 = Tab("墨水游戏")
+local Tab9 = Tab("FPS：5")
+local Tab10 = Tab("破坏者谜团")
+local Tab11 = Tab("监狱人生")
+local Tab12 = Tab("最强战场")
+local Tab13 = Tab("99夜")
 local Tabd = Tab("催更地点")
 local Tabb = Tab("设置")
 
@@ -128,6 +136,18 @@ Taba:Paragraph({
 })
 
 Taba:Paragraph({
+    Title = "最大贡献者：",
+    Desc = [[Cappo]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#FFFFFF"),
+    BackgroundTransparency = 1,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Taba:Paragraph({
     Title = "星期五下午到星期天中午之间司空是在线的",
     Desc = [[ ]],
     Image = "eye",
@@ -166,6 +186,10 @@ Tab1:Paragraph({
     OutlineThickness = 1,
     Padding = UDim.new(0, 1)
 })
+
+Button(Tab1, "Adonis管理系统反作弊绕过", function() 
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua'))()
+end)
 
 Slider(Tab1, "移动速度", 1, 600, game.Players.LocalPlayer.Character.Humanoid.WalkSpeed, function(a) 
         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
@@ -496,6 +520,10 @@ Button(Tab1, "司空汉化部件环绕v6", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/fdydyf/main/%E9%BB%91%E6%B4%9E%E7%8E%AF%E7%BB%95v6"))()
 end)
 
+Button(Tab1, "司空汉化整人黑洞", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/eyidfki/main/%E9%BB%91%E6%B4%9ECappo"))()
+end)
+
 Tab1:Paragraph({
     Title = "以下是fps区",
     Desc = [[ 👇👇👇]],
@@ -558,6 +586,10 @@ Button(Tab1, "触碰既甩飞", function()
         loadstring(game:HttpGet("http://rawscripts.net/raw/Universal-Script-Touch-fling-script-22447"))()
 end)
 
+Button(Tab1, "防甩飞", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/protezzx/Player-joined-left/refs/heads/main/Antifling%20script",true))()
+end)
+
 Tab1:Paragraph({
     Title = "以下是防坠落区",
     Desc = [[ 👇👇👇]],
@@ -603,6 +635,27 @@ Button(Tab1, "点击传送工具", function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
                 end)
                 tool.Parent = game.Players.LocalPlayer.Backpack
+end)
+
+Tab1:Paragraph({
+    Title = "以下是关于跑酷的",
+    Desc = [[ 👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+
+Button(Tab1, "贴墙走", function() 
+        loadstring(game:HttpGet('https://pastebin.com/raw/0J9ERxCm'))()
+end)
+
+Button(Tab1, "通用跑酷脚本[老外]", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/eyidfki/main/%E8%B7%91%E9%85%B7%E8%80%81%E5%A4%96"))()
 end)
 
 Tab1:Paragraph({
@@ -789,6 +842,39 @@ Tab1:Paragraph({
 Button(Tab1, "控制NPC", function() 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/fe-source/refs/heads/main/NPC/source/main.Luau"))()
 end)
+--===========娱乐===========
+Button(Tabyl, "coolgui[适用电脑]", function() 
+        loadstring(game:HttpGet("https://pastebin.com/raw/kxuNSVD3"))('Furry gon complain 🥀')
+end)
+
+Button(Tabyl, "coolgui[适用手机]", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/eyidfki/main/cool%E6%89%8B%E6%9C%BA"))()
+end)
+
+--===========FE===========
+--===========FE===========
+--===========FE===========
+--===========FE===========
+--===========FE===========
+Button(TabFE, "索尼克", function() 
+        loadstring(game:HttpGet("https://pastefy.app/otFP6Acp/raw"))()
+end)
+
+Button(TabFE, "地精", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe/main/obf_rTvXTs8F16D8D2oiLxZ62E1E9jT1we312yUyJr2h72Vwqr32l37rirU1S89hqRV7.lua.txt"))()
+end)
+
+Button(TabFE, "尾巴", function() 
+        loadstring(game:HttpGet("https://pastefy.app/cQ2RNfpR/raw"))()
+end)
+
+Button(TabFE, "超光速and超级跳跃", function() 
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fake-lag-41217"))()
+end)
+
+Button(TabFE, "096", function() 
+        loadstring(game:HttpGet("https://pastefy.app/YsJgITXR/raw"))()
+end)
 
 Button(TabFE, "超多动作but英文", function() 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/vv/main/%E8%80%81%E5%A4%96%E5%8A%A8%E4%BD%9C100%E4%B8%87%E4%B8%AA"))()
@@ -796,6 +882,26 @@ end)
 
 Button(TabFE, "动作", function() 
         loadstring(game:HttpGet("https://yarhm.mhi.im/scr?channel=afemmax"))()
+end)
+
+Button(TabFE, "导管子[E快 Q慢]", function() 
+        loadstring(game:HttpGet("https://pastefy.app/lawnvcTT/raw", true))()
+end)
+
+Button(TabFE, "导管子r15", function() 
+        loadstring(game:HttpGet("https://pastefy.app/YZoglOyJ/raw"))()
+end)
+
+Button(TabFE, "导管子r6", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/imalwaysad/universal-gui/refs/heads/main/jerk%20off%20r6"))()
+end)
+
+Button(TabFE, "僵尸模式", function() 
+        loadstring(game:HttpGet("https://pastefy.app/JOWniO6o/raw"))()
+end)
+
+Button(TabFE, "英雄", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kanade-script/invincible-script/refs/heads/main/mark%20mode",true))()
 end)
 
 Button(TabFE, "隐身", function() 
@@ -1775,6 +1881,51 @@ Button(Tab8, "bored汉化", function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/hdjsjjdgrhj/script-hub/refs/heads/main/bored"))()
 end)
 
+Button(Tab9, "老外op", function() 
+        loadstring(game:HttpGet('https://codeberg.org/NTDCore/FPES/raw/branch/main/main.lua', true))()
+end)
+
+Button(Tab10, "mm2[英文]", function() 
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/de-ishi/syl/refs/heads/main/ForsakenOBF.lua'))()
+end)
+Tab1:Paragraph({
+    Title = "此脚本传送的时候不要在短时间内频率太高",
+    Desc = [[ 👇👇👇]],
+    Image = "eye",
+    ImageSize = 24,
+    Color = Color3.fromHex("#000000"),
+    BackgroundColor3 = Color3.fromHex("#000000"),
+    BackgroundTransparency = 0.2,
+    OutlineColor = Color3.fromHex("#FFFFFF"),
+    OutlineThickness = 1,
+    Padding = UDim.new(0, 1)
+})
+Button(Tab11, "Cappo汉化[无反作弊]", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/smalldesikon/eyidfki/main/cappo%E6%B1%89%E5%8C%96%E7%9B%91%E7%8B%B1%E4%BA%BA%E7%94%9F"))()
+end)
+
+Button(Tab11, "复制Cappo汉化卡密", function()
+    setclipboard("WSAD")
+end)
+
+Button(Tab11, "超级op级[要解卡密]", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/comppfun/script/refs/heads/main/script"))()
+end)
+
+Button(Tab12, "老外1", function() 
+        loadstring(game:HttpGet("https://pastebin.com/raw/U3scYPvW"))()
+end)
+
+Button(Tab13, "国人1", function() 
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gycgchgyfytdttr/shenqin/refs/heads/main/99day.lua"))()
+end)
+
+--============以下是设置那些的==============
+--============以下是设置那些的==============
+--============以下是设置那些的==============
+--============以下是设置那些的==============
+--============以下是设置那些的==============
+
 Button(Tabb, "折叠UI", function()
     Window:Close()
 end)
@@ -1811,3 +1962,7 @@ end)
 Button(Tabb, "离开服务器", function() 
     game:Shutdown()
 end)
+
+pcall(function()
+     loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()
+ end)
